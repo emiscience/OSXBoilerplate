@@ -14,6 +14,38 @@
 
 #pragma mark NSApplicationDelegate
 - (void)applicationDidFinishLaunching:(NSNotification *)didFinishNotification {
+}
+
+#pragma mark Creating
+- (id)init {
+   self = [super init];
+   if(self) {
+      self.coreDataStack = [[OSBApplicationCoreDataStack alloc] init];
+     [[OSBImageManager sharedImageManager] setDelegate:self];
+   }
+   return self;
+}
+
+#pragma mark Properties
+@synthesize window, coreDataStack;
+
+- (NSManagedObjectModel *)managedObjectModel {
+   return self.coreDataStack.managedObjectModel;
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+   return self.coreDataStack.persistentStoreCoordinator;
+}
+
+- (NSManagedObjectContext *)managedObjectContext {
+   return self.coreDataStack.managedObjectContext;
+}
+
+- (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window {
+    return [[self managedObjectContext] undoManager];
+}
+
+-(IBAction)refresh:(id)sender{
   NSFetchRequest * allPins = [[NSFetchRequest alloc] init];
   [allPins setEntity:[NSEntityDescription entityForName:@"Pin" inManagedObjectContext:[self managedObjectContext]]];
   [allPins setIncludesPropertyValues:NO]; //only fetch the managedObjectID
@@ -46,36 +78,6 @@
       [[NSOperationQueue mainQueue] addOperation:op];
     }
   }];
-  
-}
-
-#pragma mark Creating
-- (id)init {
-   self = [super init];
-   if(self) {
-      self.coreDataStack = [[OSBApplicationCoreDataStack alloc] init];
-     [[OSBImageManager sharedImageManager] setDelegate:self];
-   }
-   return self;
-}
-
-#pragma mark Properties
-@synthesize window, coreDataStack;
-
-- (NSManagedObjectModel *)managedObjectModel {
-   return self.coreDataStack.managedObjectModel;
-}
-
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-   return self.coreDataStack.persistentStoreCoordinator;
-}
-
-- (NSManagedObjectContext *)managedObjectContext {
-   return self.coreDataStack.managedObjectContext;
-}
-
-- (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window {
-    return [[self managedObjectContext] undoManager];
 }
 
 #pragma mark Actions
