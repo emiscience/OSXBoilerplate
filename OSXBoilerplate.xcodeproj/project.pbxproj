@@ -30,7 +30,6 @@
 		AB9276A8142776A900303D2F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AB9276A6142776A900303D2F /* Credits.rtf */; };
 		AB9276AB142776A900303D2F /* OSBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9276AA142776A900303D2F /* OSBAppDelegate.m */; };
 		AB9276AE142776AA00303D2F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB9276AC142776AA00303D2F /* MainMenu.xib */; };
-		AB9276B1142776AA00303D2F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB9276AF142776AA00303D2F /* Model.xcdatamodeld */; };
 		AB9276D714277A7400303D2F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9276D614277A7400303D2F /* SystemConfiguration.framework */; };
 		AB9276D914277A9C00303D2F /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9276D814277A9C00303D2F /* libz.1.2.5.dylib */; };
 		AB9276DB14277AB300303D2F /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9276DA14277AB300303D2F /* CoreServices.framework */; };
@@ -38,6 +37,12 @@
 		AB9277181427887600303D2F /* NSFileManager-OSXBoilerplateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9277171427887600303D2F /* NSFileManager-OSXBoilerplateAdditions.m */; };
 		AB92771C14278CE100303D2F /* NSBundle-OSXBoilerplateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB92771B14278CE100303D2F /* NSBundle-OSXBoilerplateAdditions.m */; };
 		ABF8EAFF142C86A50020AE23 /* OSBDownloadImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF8EAFE142C86A40020AE23 /* OSBDownloadImageOperation.m */; };
+		FD2D10C0152376F3006FB540 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = FD2D10B8152376F3006FB540 /* CHANGELOG.md */; };
+		FD2D10C1152376F3006FB540 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2D10BA152376F3006FB540 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FD2D10C2152376F3006FB540 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FD2D10BB152376F3006FB540 /* README.md */; };
+		FD2D10C3152376F3006FB540 /* SVHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2D10BD152376F3006FB540 /* SVHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FD2D10C4152376F3006FB540 /* SVHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2D10BF152376F3006FB540 /* SVHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FD2D10CE15237DD3006FB540 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD2D10CC15237DD2006FB540 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,7 +90,6 @@
 		AB9276A9142776A900303D2F /* OSBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSBAppDelegate.h; sourceTree = "<group>"; };
 		AB9276AA142776A900303D2F /* OSBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSBAppDelegate.m; sourceTree = "<group>"; };
 		AB9276AD142776AA00303D2F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		AB9276B0142776AA00303D2F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		AB9276D614277A7400303D2F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AB9276D814277A9C00303D2F /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		AB9276DA14277AB300303D2F /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -101,6 +105,17 @@
 		ABF8EAFD142C86A40020AE23 /* OSBDownloadImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSBDownloadImageOperation.h; sourceTree = "<group>"; };
 		ABF8EAFE142C86A40020AE23 /* OSBDownloadImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSBDownloadImageOperation.m; sourceTree = "<group>"; };
 		ABF8EB00142C93C10020AE23 /* OSBDownloadImageOperationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSBDownloadImageOperationDelegate.h; sourceTree = "<group>"; };
+		FD2D10B8152376F3006FB540 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		FD2D10B9152376F3006FB540 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		FD2D10BA152376F3006FB540 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		FD2D10BB152376F3006FB540 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		FD2D10BC152376F3006FB540 /* SVHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVHTTPClient.h; sourceTree = "<group>"; };
+		FD2D10BD152376F3006FB540 /* SVHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVHTTPClient.m; sourceTree = "<group>"; };
+		FD2D10BE152376F3006FB540 /* SVHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVHTTPRequest.h; sourceTree = "<group>"; };
+		FD2D10BF152376F3006FB540 /* SVHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVHTTPRequest.m; sourceTree = "<group>"; };
+		FD2D10CD15237DD3006FB540 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		FD2D10D21523876E006FB540 /* Pin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Pin.h; path = ../../../../../../.Trash/Pin.h; sourceTree = "<group>"; };
+		FD2D10D31523876E006FB540 /* Pin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Pin.m; path = ../../../../../../.Trash/Pin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +250,7 @@
 		AB927688142776A900303D2F = {
 			isa = PBXGroup;
 			children = (
+				FD2D10CC15237DD2006FB540 /* Model.xcdatamodeld */,
 				AB272B9F1429E4AA00EE2A7F /* libsqlite3.dylib */,
 				AB9276F2142782E200303D2F /* SenTestingKit.framework */,
 				AB9276DA14277AB300303D2F /* CoreServices.framework */,
@@ -257,6 +273,7 @@
 		AB927696142776A900303D2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD2D10B6152376F3006FB540 /* SVHTTPRequest */,
 				AB927697142776A900303D2F /* Cocoa.framework */,
 				AB9277021427841200303D2F /* SenTestingKit.framework */,
 				AB927699142776A900303D2F /* Other Frameworks */,
@@ -281,8 +298,9 @@
 				AB272B831429DA2600EE2A7F /* OSXBoilerplate Code */,
 				AB9276A9142776A900303D2F /* OSBAppDelegate.h */,
 				AB9276AA142776A900303D2F /* OSBAppDelegate.m */,
+				FD2D10D21523876E006FB540 /* Pin.h */,
+				FD2D10D31523876E006FB540 /* Pin.m */,
 				AB9276AC142776AA00303D2F /* MainMenu.xib */,
-				AB9276AF142776AA00303D2F /* Model.xcdatamodeld */,
 				AB92769E142776A900303D2F /* Supporting Files */,
 			);
 			path = OSXBoilerplate;
@@ -353,6 +371,29 @@
 			name = Bundle;
 			sourceTree = "<group>";
 		};
+		FD2D10B6152376F3006FB540 /* SVHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				FD2D10B7152376F3006FB540 /* JSONKit */,
+				FD2D10BC152376F3006FB540 /* SVHTTPClient.h */,
+				FD2D10BD152376F3006FB540 /* SVHTTPClient.m */,
+				FD2D10BE152376F3006FB540 /* SVHTTPRequest.h */,
+				FD2D10BF152376F3006FB540 /* SVHTTPRequest.m */,
+			);
+			path = SVHTTPRequest;
+			sourceTree = "<group>";
+		};
+		FD2D10B7152376F3006FB540 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				FD2D10B8152376F3006FB540 /* CHANGELOG.md */,
+				FD2D10B9152376F3006FB540 /* JSONKit.h */,
+				FD2D10BA152376F3006FB540 /* JSONKit.m */,
+				FD2D10BB152376F3006FB540 /* README.md */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -408,6 +449,8 @@
 				AB9276AE142776AA00303D2F /* MainMenu.xib in Resources */,
 				AB272B8B1429DAF000EE2A7F /* OSBGeneralPreferencesViewController.xib in Resources */,
 				AB272B901429DB2B00EE2A7F /* OSBMiscPreferencesViewController.xib in Resources */,
+				FD2D10C0152376F3006FB540 /* CHANGELOG.md in Resources */,
+				FD2D10C2152376F3006FB540 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +463,6 @@
 			files = (
 				AB9276A4142776A900303D2F /* main.m in Sources */,
 				AB9276AB142776A900303D2F /* OSBAppDelegate.m in Sources */,
-				AB9276B1142776AA00303D2F /* Model.xcdatamodeld in Sources */,
 				AB9276DE14277ADA00303D2F /* OSBImageManager.m in Sources */,
 				AB9277181427887600303D2F /* NSFileManager-OSXBoilerplateAdditions.m in Sources */,
 				AB92771C14278CE100303D2F /* NSBundle-OSXBoilerplateAdditions.m in Sources */,
@@ -439,6 +481,10 @@
 				AB272B9D1429E47A00EE2A7F /* FMDatabaseAdditions.m in Sources */,
 				AB272B9E1429E47A00EE2A7F /* FMResultSet.m in Sources */,
 				ABF8EAFF142C86A50020AE23 /* OSBDownloadImageOperation.m in Sources */,
+				FD2D10C1152376F3006FB540 /* JSONKit.m in Sources */,
+				FD2D10C3152376F3006FB540 /* SVHTTPClient.m in Sources */,
+				FD2D10C4152376F3006FB540 /* SVHTTPRequest.m in Sources */,
+				FD2D10CE15237DD3006FB540 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,12 +611,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		AB9276AF142776AA00303D2F /* Model.xcdatamodeld */ = {
+		FD2D10CC15237DD2006FB540 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				AB9276B0142776AA00303D2F /* Model.xcdatamodel */,
+				FD2D10CD15237DD3006FB540 /* Model.xcdatamodel */,
 			);
-			currentVersion = AB9276B0142776AA00303D2F /* Model.xcdatamodel */;
+			currentVersion = FD2D10CD15237DD3006FB540 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

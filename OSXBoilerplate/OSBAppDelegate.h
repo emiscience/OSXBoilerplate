@@ -6,8 +6,11 @@
 
 #import <Cocoa/Cocoa.h>
 #import "OSBImageManagerDelegate.h"
+#import "OSBImageManager.h"
+#import "SVHTTPClient.h"
+#import "Pin.h"
 
-@interface OSBAppDelegate : NSObject <NSApplicationDelegate, OSBImageManagerDelegate>
+@interface OSBAppDelegate : NSObject <NSApplicationDelegate, OSBImageManagerDelegate, NSCollectionViewDelegate>
 
 #pragma mark Properties
 @property (assign) IBOutlet NSWindow *window;

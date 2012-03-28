@@ -14,6 +14,38 @@
 
 #pragma mark NSApplicationDelegate
 - (void)applicationDidFinishLaunching:(NSNotification *)didFinishNotification {
+  NSFetchRequest * allPins = [[NSFetchRequest alloc] init];
+  [allPins setEntity:[NSEntityDescription entityForName:@"Pin" inManagedObjectContext:[self managedObjectContext]]];
+  [allPins setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+  
+  NSError * error = nil;
+  NSArray * pins = [[self managedObjectContext] executeFetchRequest:allPins error:&error];
+  //error handling goes here
+  for (NSManagedObject * Pin in pins) {
+    [[self managedObjectContext] deleteObject:Pin];
+  }
+  NSError *saveError = nil;
+  [[self managedObjectContext] save:&saveError];
+  [[SVHTTPClient sharedClient] setCachePolicy:NSURLRequestUseProtocolCachePolicy];
+  [[SVHTTPClient sharedClient] setBasePath:@"https://api.pinterest.com/v2/"];
+  [[SVHTTPClient sharedClient] GET:@"popular" parameters:nil completion:^(id response, NSError *error) {
+    if (![response isKindOfClass:[NSDictionary class]]) {
+      NSLog(@"Dictionary not returned by Pinterest.");
+      if (error != nil) {
+        NSLog(@"error %@", error);
+      }
+    }
+    for (NSDictionary * pinDict in [response objectForKey:@"pins"]) {
+      NSBlockOperation * op = [NSBlockOperation blockOperationWithBlock:^{
+        Pin * pin = [NSEntityDescription insertNewObjectForEntityForName:@"Pin" inManagedObjectContext:[self managedObjectContext]];
+        pin.title = [pinDict objectForKey:@"description"];
+        pin.imageURL = [[pinDict objectForKey:@"images"] objectForKey:@"thumbnail"];
+        [OSBImageManager loadImage:[NSURL URLWithString:pin.imageURL]];
+      }];
+      [[NSOperationQueue mainQueue] addOperation:op];
+    }
+  }];
+  
 }
 
 #pragma mark Creating
@@ -21,6 +53,7 @@
    self = [super init];
    if(self) {
       self.coreDataStack = [[OSBApplicationCoreDataStack alloc] init];
+     [[OSBImageManager sharedImageManager] setDelegate:self];
    }
    return self;
 }
@@ -103,6 +136,24 @@
     return NSTerminateNow;
 }
 
+- (void)imageManager:(OSBImageManager *)imageManager didLoadImage:(NSImage *)image withURL:(NSURL *)URL{
+  NSFetchRequest * allPins = [[NSFetchRequest alloc] init];
+  [allPins setEntity:[NSEntityDescription entityForName:@"Pin" inManagedObjectContext:[self managedObjectContext]]];
+  [allPins setPredicate:[NSPredicate predicateWithFormat:@"imageURL == %@", [URL absoluteString]]];
+  NSError * error = nil;
+  NSArray * pins = [[self managedObjectContext] executeFetchRequest:allPins error:&error];
+  
+  if ([pins count]==1) {
+    ((Pin*)[pins objectAtIndex:0]).image = image;
+  }
+  
+  NSError *saveError = nil;
+  [[self managedObjectContext] save:&saveError];
+}
+
+- (BOOL)collectionView:(NSCollectionView *)collectionView canDragItemsAtIndexes:(NSIndexSet *)indexes withEvent:(NSEvent *)event{
+  return YES;
+}
 @end
 
 
