@@ -26,6 +26,7 @@
   }
   NSError *saveError = nil;
   [[self managedObjectContext] save:&saveError];
+  
   [[SVHTTPClient sharedClient] setCachePolicy:NSURLRequestUseProtocolCachePolicy];
   [[SVHTTPClient sharedClient] setBasePath:@"https://api.pinterest.com/v2/"];
   [[SVHTTPClient sharedClient] GET:@"popular" parameters:nil completion:^(id response, NSError *error) {
