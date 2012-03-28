@@ -10,7 +10,7 @@
 #import "SVHTTPClient.h"
 #import "Pin.h"
 
-@interface OSBAppDelegate : NSObject <NSApplicationDelegate, OSBImageManagerDelegate, NSCollectionViewDelegate>
+@interface OSBAppDelegate : NSObject <NSApplicationDelegate, OSBImageManagerDelegate, NSCollectionViewDelegate, NSControlTextEditingDelegate>
 
 #pragma mark Properties
 @property (assign) IBOutlet NSWindow *window;

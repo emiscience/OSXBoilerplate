@@ -59,7 +59,6 @@
   NSError *saveError = nil;
   [[self managedObjectContext] save:&saveError];
   
-  [[SVHTTPClient sharedClient] setCachePolicy:NSURLRequestUseProtocolCachePolicy];
   [[SVHTTPClient sharedClient] setBasePath:@"https://api.pinterest.com/v2/"];
   [[SVHTTPClient sharedClient] GET:@"popular" parameters:nil completion:^(id response, NSError *error) {
     if (![response isKindOfClass:[NSDictionary class]]) {
@@ -67,6 +66,7 @@
       if (error != nil) {
         NSLog(@"error %@", error);
       }
+      return;
     }
     for (NSDictionary * pinDict in [response objectForKey:@"pins"]) {
       NSBlockOperation * op = [NSBlockOperation blockOperationWithBlock:^{
@@ -154,8 +154,42 @@
   [[self managedObjectContext] save:&saveError];
 }
 
-- (BOOL)collectionView:(NSCollectionView *)collectionView canDragItemsAtIndexes:(NSIndexSet *)indexes withEvent:(NSEvent *)event{
-  return YES;
+-(void)controlTextDidEndEditing:(NSNotification *)obj{
+  NSFetchRequest * allPins = [[NSFetchRequest alloc] init];
+  [allPins setEntity:[NSEntityDescription entityForName:@"Pin" inManagedObjectContext:[self managedObjectContext]]];
+  [allPins setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+  
+  NSError * error = nil;
+  NSArray * pins = [[self managedObjectContext] executeFetchRequest:allPins error:&error];
+  //error handling goes here
+  for (NSManagedObject * Pin in pins) {
+    [[self managedObjectContext] deleteObject:Pin];
+  }
+  NSError *saveError = nil;
+  [[self managedObjectContext] save:&saveError];
+
+  NSString * queryString = ((NSSearchField*)obj.object).stringValue;
+  NSDictionary * paramsDict = [NSDictionary dictionaryWithObject:queryString forKey:@"query"];
+  [[SVHTTPClient sharedClient] setBasePath:@"https://api.pinterest.com/v2/"];
+  [[SVHTTPClient sharedClient] GET:@"search/pins/" parameters:paramsDict completion:^(id response, NSError *error) {
+    if (![response isKindOfClass:[NSDictionary class]]) {
+      NSLog(@"Dictionary not returned by Pinterest.");
+      if (error != nil) {
+        NSLog(@"error %@", error);
+      }
+      return;
+    }
+    
+      for (NSDictionary * pinDict in [response objectForKey:@"pins"]) {
+        NSBlockOperation * op = [NSBlockOperation blockOperationWithBlock:^{
+          Pin * pin = [NSEntityDescription insertNewObjectForEntityForName:@"Pin" inManagedObjectContext:[self managedObjectContext]];
+          pin.title = [pinDict objectForKey:@"description"];
+          pin.imageURL = [[pinDict objectForKey:@"images"] objectForKey:@"thumbnail"];
+          [OSBImageManager loadImage:[NSURL URLWithString:pin.imageURL]];
+        }];
+        [[NSOperationQueue mainQueue] addOperation:op];
+      }
+    }];
 }
 @end
 
