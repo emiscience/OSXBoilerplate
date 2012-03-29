@@ -1,5 +1,6 @@
 #import "OSBAppDelegate.h"
 #import "OSBApplicationCoreDataStack.h"
+#import "MyViewController.h"
 
 @interface OSBAppDelegate ()
 
@@ -99,6 +100,10 @@
     if(![[self managedObjectContext] save:&error]) {
         [[NSApplication sharedApplication] presentError:error];
     }
+}
+
+- (IBAction)detailAction:(id)sender{
+  NSLog(@"%@",[((NSButton*)sender) superview]);
 }
 
 #pragma mark NSApplicationDelegate

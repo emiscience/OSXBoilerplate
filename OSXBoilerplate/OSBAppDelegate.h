@@ -22,5 +22,6 @@
 
 #pragma mark Actions
 - (IBAction)saveAction:(id)sender;
+- (IBAction)detailAction:(id)sender;
 - (IBAction)refresh:(id)sender;
 @end
