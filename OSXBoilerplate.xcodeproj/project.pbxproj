@@ -43,7 +43,6 @@
 		FD2D10C3152376F3006FB540 /* SVHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2D10BD152376F3006FB540 /* SVHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FD2D10C4152376F3006FB540 /* SVHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2D10BF152376F3006FB540 /* SVHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FD2D10CE15237DD3006FB540 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD2D10CC15237DD2006FB540 /* Model.xcdatamodeld */; };
-		FD9C1EFF1523C66C00D50938 /* PBSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9C1EFE1523C66C00D50938 /* PBSearchManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,8 +116,6 @@
 		FD2D10CD15237DD3006FB540 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		FD2D10DA152392FA006FB540 /* Pin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pin.h; sourceTree = "<group>"; };
 		FD2D10DB152392FA006FB540 /* Pin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pin.m; sourceTree = "<group>"; };
-		FD9C1EFD1523C66C00D50938 /* PBSearchManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBSearchManager.h; sourceTree = "<group>"; };
-		FD9C1EFE1523C66C00D50938 /* PBSearchManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBSearchManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,8 +299,6 @@
 				AB9276A9142776A900303D2F /* OSBAppDelegate.h */,
 				AB9276AA142776A900303D2F /* OSBAppDelegate.m */,
 				AB9276AC142776AA00303D2F /* MainMenu.xib */,
-				FD9C1EFD1523C66C00D50938 /* PBSearchManager.h */,
-				FD9C1EFE1523C66C00D50938 /* PBSearchManager.m */,
 				FD2D10DC152392FF006FB540 /* Core Data Entities */,
 				AB92769E142776A900303D2F /* Supporting Files */,
 			);
@@ -498,7 +493,6 @@
 				FD2D10C3152376F3006FB540 /* SVHTTPClient.m in Sources */,
 				FD2D10C4152376F3006FB540 /* SVHTTPRequest.m in Sources */,
 				FD2D10CE15237DD3006FB540 /* Model.xcdatamodeld in Sources */,
-				FD9C1EFF1523C66C00D50938 /* PBSearchManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

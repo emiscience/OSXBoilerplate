@@ -9,7 +9,6 @@
 #import "OSBImageManager.h"
 #import "SVHTTPClient.h"
 #import "Pin.h"
-#import "PBSearchManager.h"
 
 @interface OSBAppDelegate : NSObject <NSApplicationDelegate, OSBImageManagerDelegate, NSCollectionViewDelegate, NSControlTextEditingDelegate>
 
