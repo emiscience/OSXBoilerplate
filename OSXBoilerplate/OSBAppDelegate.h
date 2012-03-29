@@ -9,6 +9,7 @@
 #import "OSBImageManager.h"
 #import "SVHTTPClient.h"
 #import "Pin.h"
+#import "PBSearchManager.h"
 
 @interface OSBAppDelegate : NSObject <NSApplicationDelegate, OSBImageManagerDelegate, NSCollectionViewDelegate, NSControlTextEditingDelegate>
 
@@ -17,6 +18,8 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) IBOutlet NSArrayController * arrayController;
+@property (weak) IBOutlet NSProgressIndicator *progressIndicator;
 
 #pragma mark Actions
 - (IBAction)saveAction:(id)sender;

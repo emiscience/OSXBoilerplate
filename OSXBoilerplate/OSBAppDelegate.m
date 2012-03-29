@@ -13,6 +13,7 @@
 
 
 #pragma mark NSApplicationDelegate
+@synthesize progressIndicator, arrayController;
 - (void)applicationDidFinishLaunching:(NSNotification *)didFinishNotification {
 }
 
@@ -21,6 +22,9 @@
    self = [super init];
    if(self) {
       self.coreDataStack = [[OSBApplicationCoreDataStack alloc] init];
+      self.arrayController = [[NSArrayController alloc] init];
+     [[self arrayController] setUsesLazyFetching:YES];
+     [[self arrayController] addObject:@"Recent Searches"];
      [[OSBImageManager sharedImageManager] setDelegate:self];
    }
    return self;
@@ -46,6 +50,8 @@
 }
 
 -(IBAction)refresh:(id)sender{
+  [[self progressIndicator] setHidden:NO];
+  [[self progressIndicator] startAnimation:self];
   NSFetchRequest * allPins = [[NSFetchRequest alloc] init];
   [allPins setEntity:[NSEntityDescription entityForName:@"Pin" inManagedObjectContext:[self managedObjectContext]]];
   [allPins setIncludesPropertyValues:NO]; //only fetch the managedObjectID
@@ -77,6 +83,8 @@
       }];
       [[NSOperationQueue mainQueue] addOperation:op];
     }
+    [[self progressIndicator] stopAnimation:self];
+    [[self progressIndicator] setHidden:YES];
   }];
 }
 
@@ -155,6 +163,21 @@
 }
 
 -(void)controlTextDidEndEditing:(NSNotification *)obj{
+  NSString * queryString = ((NSSearchField*)obj.object).stringValue;
+  if ([queryString isEqualToString:@""]) {
+    return;
+  }
+  if ([((NSSearchField*)obj.object).recentSearches count]>0) {
+    if ([[((NSSearchField*)obj.object).recentSearches objectAtIndex:0] isEqualToString:queryString]) {
+      return;
+    }
+  }
+  
+  [[self progressIndicator] setHidden:NO];
+  [[self progressIndicator] startAnimation:self];
+  
+  [self.arrayController addObject:queryString];
+  
   NSFetchRequest * allPins = [[NSFetchRequest alloc] init];
   [allPins setEntity:[NSEntityDescription entityForName:@"Pin" inManagedObjectContext:[self managedObjectContext]]];
   [allPins setIncludesPropertyValues:NO]; //only fetch the managedObjectID
@@ -162,13 +185,12 @@
   NSError * error = nil;
   NSArray * pins = [[self managedObjectContext] executeFetchRequest:allPins error:&error];
   //error handling goes here
-  for (NSManagedObject * Pin in pins) {
-    [[self managedObjectContext] deleteObject:Pin];
+  for (NSManagedObject * pin in pins) {
+    [[self managedObjectContext] deleteObject:pin];
   }
   NSError *saveError = nil;
   [[self managedObjectContext] save:&saveError];
 
-  NSString * queryString = ((NSSearchField*)obj.object).stringValue;
   NSDictionary * paramsDict = [NSDictionary dictionaryWithObject:queryString forKey:@"query"];
   [[SVHTTPClient sharedClient] setBasePath:@"https://api.pinterest.com/v2/"];
   [[SVHTTPClient sharedClient] GET:@"search/pins/" parameters:paramsDict completion:^(id response, NSError *error) {
@@ -180,16 +202,18 @@
       return;
     }
     
-      for (NSDictionary * pinDict in [response objectForKey:@"pins"]) {
-        NSBlockOperation * op = [NSBlockOperation blockOperationWithBlock:^{
-          Pin * pin = [NSEntityDescription insertNewObjectForEntityForName:@"Pin" inManagedObjectContext:[self managedObjectContext]];
-          pin.title = [pinDict objectForKey:@"description"];
-          pin.imageURL = [[pinDict objectForKey:@"images"] objectForKey:@"thumbnail"];
-          [OSBImageManager loadImage:[NSURL URLWithString:pin.imageURL]];
-        }];
-        [[NSOperationQueue mainQueue] addOperation:op];
-      }
-    }];
+    for (NSDictionary * pinDict in [response objectForKey:@"pins"]) {
+      NSBlockOperation * op = [NSBlockOperation blockOperationWithBlock:^{
+        Pin * pin = [NSEntityDescription insertNewObjectForEntityForName:@"Pin" inManagedObjectContext:[self managedObjectContext]];
+        pin.title = [pinDict objectForKey:@"description"];
+        pin.imageURL = [[pinDict objectForKey:@"images"] objectForKey:@"thumbnail"];
+        [OSBImageManager loadImage:[NSURL URLWithString:pin.imageURL]];
+      }];
+      [[NSOperationQueue mainQueue] addOperation:op];
+    }
+    [[self progressIndicator] stopAnimation:self];
+    [[self progressIndicator] setHidden:YES];
+  }];
 }
 @end
 
