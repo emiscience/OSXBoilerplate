@@ -1,0 +1,3 @@
+[submodule "SVHTTPRequest"]
+	path = SVHTTPRequest
+	url = git@github.com:jstart/SVHTTPRequest.git
