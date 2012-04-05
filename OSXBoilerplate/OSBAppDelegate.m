@@ -1,6 +1,5 @@
 #import "OSBAppDelegate.h"
 #import "OSBApplicationCoreDataStack.h"
-#import "MyViewController.h"
 
 @interface OSBAppDelegate ()
 
