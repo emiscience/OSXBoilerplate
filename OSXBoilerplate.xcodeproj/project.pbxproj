@@ -37,12 +37,13 @@
 		AB9277181427887600303D2F /* NSFileManager-OSXBoilerplateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9277171427887600303D2F /* NSFileManager-OSXBoilerplateAdditions.m */; };
 		AB92771C14278CE100303D2F /* NSBundle-OSXBoilerplateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AB92771B14278CE100303D2F /* NSBundle-OSXBoilerplateAdditions.m */; };
 		ABF8EAFF142C86A50020AE23 /* OSBDownloadImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF8EAFE142C86A40020AE23 /* OSBDownloadImageOperation.m */; };
-		FD2D10C0152376F3006FB540 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = FD2D10B8152376F3006FB540 /* CHANGELOG.md */; };
-		FD2D10C1152376F3006FB540 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2D10BA152376F3006FB540 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FD2D10C2152376F3006FB540 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FD2D10BB152376F3006FB540 /* README.md */; };
-		FD2D10C3152376F3006FB540 /* SVHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2D10BD152376F3006FB540 /* SVHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FD2D10C4152376F3006FB540 /* SVHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2D10BF152376F3006FB540 /* SVHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FD2D10CE15237DD3006FB540 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD2D10CC15237DD2006FB540 /* Model.xcdatamodeld */; };
+		FDF9CBE1152E2F55009D21A8 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = FDF9CBD9152E2F55009D21A8 /* CHANGELOG.md */; };
+		FDF9CBE2152E2F55009D21A8 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF9CBDB152E2F55009D21A8 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FDF9CBE3152E2F55009D21A8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FDF9CBDC152E2F55009D21A8 /* README.md */; };
+		FDF9CBE4152E2F55009D21A8 /* SVHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF9CBDE152E2F55009D21A8 /* SVHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FDF9CBE5152E2F55009D21A8 /* SVHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF9CBE0152E2F55009D21A8 /* SVHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FDF9CBEC152E3080009D21A8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF9CBEB152E3080009D21A8 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,17 +106,18 @@
 		ABF8EAFD142C86A40020AE23 /* OSBDownloadImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSBDownloadImageOperation.h; sourceTree = "<group>"; };
 		ABF8EAFE142C86A40020AE23 /* OSBDownloadImageOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSBDownloadImageOperation.m; sourceTree = "<group>"; };
 		ABF8EB00142C93C10020AE23 /* OSBDownloadImageOperationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSBDownloadImageOperationDelegate.h; sourceTree = "<group>"; };
-		FD2D10B8152376F3006FB540 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
-		FD2D10B9152376F3006FB540 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		FD2D10BA152376F3006FB540 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		FD2D10BB152376F3006FB540 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		FD2D10BC152376F3006FB540 /* SVHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVHTTPClient.h; sourceTree = "<group>"; };
-		FD2D10BD152376F3006FB540 /* SVHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVHTTPClient.m; sourceTree = "<group>"; };
-		FD2D10BE152376F3006FB540 /* SVHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVHTTPRequest.h; sourceTree = "<group>"; };
-		FD2D10BF152376F3006FB540 /* SVHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVHTTPRequest.m; sourceTree = "<group>"; };
 		FD2D10CD15237DD3006FB540 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		FD2D10DA152392FA006FB540 /* Pin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pin.h; sourceTree = "<group>"; };
 		FD2D10DB152392FA006FB540 /* Pin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pin.m; sourceTree = "<group>"; };
+		FDF9CBD9152E2F55009D21A8 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		FDF9CBDA152E2F55009D21A8 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		FDF9CBDB152E2F55009D21A8 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		FDF9CBDC152E2F55009D21A8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		FDF9CBDD152E2F55009D21A8 /* SVHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVHTTPClient.h; sourceTree = "<group>"; };
+		FDF9CBDE152E2F55009D21A8 /* SVHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVHTTPClient.m; sourceTree = "<group>"; };
+		FDF9CBDF152E2F55009D21A8 /* SVHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVHTTPRequest.h; sourceTree = "<group>"; };
+		FDF9CBE0152E2F55009D21A8 /* SVHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVHTTPRequest.m; sourceTree = "<group>"; };
+		FDF9CBEB152E3080009D21A8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF9CBEC152E3080009D21A8 /* QuartzCore.framework in Frameworks */,
 				AB272BA01429E4AA00EE2A7F /* libsqlite3.dylib in Frameworks */,
 				AB9276DB14277AB300303D2F /* CoreServices.framework in Frameworks */,
 				AB9276D914277A9C00303D2F /* libz.1.2.5.dylib in Frameworks */,
@@ -250,6 +253,8 @@
 		AB927688142776A900303D2F = {
 			isa = PBXGroup;
 			children = (
+				FDF9CBEB152E3080009D21A8 /* QuartzCore.framework */,
+				FDF9CBE6152E2F6E009D21A8 /* External UI Widgets */,
 				FD2D10CC15237DD2006FB540 /* Model.xcdatamodeld */,
 				AB272B9F1429E4AA00EE2A7F /* libsqlite3.dylib */,
 				AB9276F2142782E200303D2F /* SenTestingKit.framework */,
@@ -273,7 +278,7 @@
 		AB927696142776A900303D2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FD2D10B6152376F3006FB540 /* SVHTTPRequest */,
+				FDF9CBD7152E2F55009D21A8 /* SVHTTPRequest */,
 				AB927697142776A900303D2F /* Cocoa.framework */,
 				AB9277021427841200303D2F /* SenTestingKit.framework */,
 				AB927699142776A900303D2F /* Other Frameworks */,
@@ -370,29 +375,6 @@
 			name = Bundle;
 			sourceTree = "<group>";
 		};
-		FD2D10B6152376F3006FB540 /* SVHTTPRequest */ = {
-			isa = PBXGroup;
-			children = (
-				FD2D10B7152376F3006FB540 /* JSONKit */,
-				FD2D10BC152376F3006FB540 /* SVHTTPClient.h */,
-				FD2D10BD152376F3006FB540 /* SVHTTPClient.m */,
-				FD2D10BE152376F3006FB540 /* SVHTTPRequest.h */,
-				FD2D10BF152376F3006FB540 /* SVHTTPRequest.m */,
-			);
-			path = SVHTTPRequest;
-			sourceTree = "<group>";
-		};
-		FD2D10B7152376F3006FB540 /* JSONKit */ = {
-			isa = PBXGroup;
-			children = (
-				FD2D10B8152376F3006FB540 /* CHANGELOG.md */,
-				FD2D10B9152376F3006FB540 /* JSONKit.h */,
-				FD2D10BA152376F3006FB540 /* JSONKit.m */,
-				FD2D10BB152376F3006FB540 /* README.md */,
-			);
-			path = JSONKit;
-			sourceTree = "<group>";
-		};
 		FD2D10DC152392FF006FB540 /* Core Data Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +382,38 @@
 				FD2D10DB152392FA006FB540 /* Pin.m */,
 			);
 			name = "Core Data Entities";
+			sourceTree = "<group>";
+		};
+		FDF9CBD7152E2F55009D21A8 /* SVHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				FDF9CBD8152E2F55009D21A8 /* JSONKit */,
+				FDF9CBDD152E2F55009D21A8 /* SVHTTPClient.h */,
+				FDF9CBDE152E2F55009D21A8 /* SVHTTPClient.m */,
+				FDF9CBDF152E2F55009D21A8 /* SVHTTPRequest.h */,
+				FDF9CBE0152E2F55009D21A8 /* SVHTTPRequest.m */,
+			);
+			name = SVHTTPRequest;
+			path = SVHTTPRequest/SVHTTPRequest;
+			sourceTree = "<group>";
+		};
+		FDF9CBD8152E2F55009D21A8 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				FDF9CBD9152E2F55009D21A8 /* CHANGELOG.md */,
+				FDF9CBDA152E2F55009D21A8 /* JSONKit.h */,
+				FDF9CBDB152E2F55009D21A8 /* JSONKit.m */,
+				FDF9CBDC152E2F55009D21A8 /* README.md */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
+		FDF9CBE6152E2F6E009D21A8 /* External UI Widgets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "External UI Widgets";
+			path = OSXBoilerplate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,8 +471,8 @@
 				AB9276AE142776AA00303D2F /* MainMenu.xib in Resources */,
 				AB272B8B1429DAF000EE2A7F /* OSBGeneralPreferencesViewController.xib in Resources */,
 				AB272B901429DB2B00EE2A7F /* OSBMiscPreferencesViewController.xib in Resources */,
-				FD2D10C0152376F3006FB540 /* CHANGELOG.md in Resources */,
-				FD2D10C2152376F3006FB540 /* README.md in Resources */,
+				FDF9CBE1152E2F55009D21A8 /* CHANGELOG.md in Resources */,
+				FDF9CBE3152E2F55009D21A8 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,10 +503,10 @@
 				AB272B9D1429E47A00EE2A7F /* FMDatabaseAdditions.m in Sources */,
 				AB272B9E1429E47A00EE2A7F /* FMResultSet.m in Sources */,
 				ABF8EAFF142C86A50020AE23 /* OSBDownloadImageOperation.m in Sources */,
-				FD2D10C1152376F3006FB540 /* JSONKit.m in Sources */,
-				FD2D10C3152376F3006FB540 /* SVHTTPClient.m in Sources */,
-				FD2D10C4152376F3006FB540 /* SVHTTPRequest.m in Sources */,
 				FD2D10CE15237DD3006FB540 /* Model.xcdatamodeld in Sources */,
+				FDF9CBE2152E2F55009D21A8 /* JSONKit.m in Sources */,
+				FDF9CBE4152E2F55009D21A8 /* SVHTTPClient.m in Sources */,
+				FDF9CBE5152E2F55009D21A8 /* SVHTTPRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
